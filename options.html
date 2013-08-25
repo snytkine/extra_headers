@@ -1,0 +1,131 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<html lang="" en>
+<head>
+    <meta charset='utf-8'>
+    <title>Extra Header Options</title>
+    <link href='css/bootstrap.min.css' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="header.css"/>
+    <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="lib.js"></script>
+    <script src="ui.js"></script>
+</head>
+<body>
+<div class="container">
+    <div class="edit_block" id="hname_editor">
+        <h4>Extra Headers setup</h4>
+
+        <p>Set the names of your extra headers</p>
+
+        <p>For compatibility a custom header name should start with an "X-" prefix, for example "X-CoolHeader"</p>
+
+        <p>If you set extra header with the same name that may exist in request it will be overridden. <br>
+            For example you can override User-Agent header by defining your own User-Agent header and setting your own
+            value<br>
+        </p>
+
+        <p>Custom Header name should not contain spaces or non-ASCII characters</p>
+
+        <div id="headers_setup">
+            <p>
+                <button class="btn btn-success" type="button" id="add_header"><i class="icon-plus icon-white"></i> New
+                    Header
+                </button>
+            </p>
+            <div class="header_setup_row">
+                <div class="input-prepend input-append">
+                    <span class="add-on">name</span>
+                    <input id="h1" class="headerName span2" type="text" value="">
+                    <button class="btn btn-primary save_name">Save</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="edit_block" id="domains_editor">
+        <h4>Allowed Domains</h4>
+
+        <p>Extra Header will be send ONLY when request is for one of these domains</p>
+
+        <p>Enter one domain name per line</p>
+
+        <p>To match all sub-domains start the name with a dot. For example .hoo.com will match all sub-domains like
+            news.hoo.com, mail.hoo.com</p>
+
+        <textarea cols="40" rows="5" id="edit_domains"></textarea>
+        <br>
+        <button class="btn btn-primary" value="Save" id="save_hosts">Save</button>
+    </div>
+
+    <div class="edit_block" id="request_t">
+        <h4>Request Types</h4>
+
+        <p>Types of requests for which extra HTTP headers will be sent</p>
+
+        <label class="checkbox">
+            <input type="checkbox" value="main_frame">
+            Main window
+        </label>
+
+        <label class="checkbox">
+            <input type="checkbox" value="sub_frame">
+           Sub frame
+        </label>
+
+        <label class="checkbox">
+            <input type="checkbox" value="stylesheet">
+            StyleSheet
+        </label>
+
+        <label class="checkbox">
+            <input type="checkbox" value="script">
+            Script
+        </label>
+
+        <label class="checkbox">
+            <input type="checkbox" value="image">
+            Image
+        </label>
+
+        <label class="checkbox">
+            <input type="checkbox" value="object">
+            Object
+        </label>
+
+        <label class="checkbox">
+            <input type="checkbox" value="xmlhttprequest">
+            XMLHttprequest (XHR)
+        </label>
+
+        <label class="checkbox">
+            <input type="checkbox" value="other">
+            Other
+        </label>
+
+
+
+    </div>
+
+    <div class="edit_block" id="footer">
+        <footer><span id="f1">&copy; Dmitri Snytkine</span></footer>
+    </div>
+
+    <!-- Modal -->
+    <div id="myModal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+         aria-hidden="true">
+        <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+            <h3 id="myModalLabel">Alert</h3>
+        </div>
+        <div class="modal-body">
+            <p id="modal_alert">Something something</p>
+        </div>
+        <div class="modal-footer">
+            <button class="btn" data-dismiss="modal" aria-hidden="true">OK</button>
+        </div>
+    </div>
+
+</div>
+</body>
+</html>
